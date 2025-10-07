@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgrsbih7no468"]
+
+[ext_resource type="Script" uid="uid://bspsn5pu1gs1l" path="res://log_file_list.gd" id="1_atb8g"]
+
+[node name="LogFileList" type="ItemList"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 24
+auto_width = true
+auto_height = true
+script = ExtResource("1_atb8g")

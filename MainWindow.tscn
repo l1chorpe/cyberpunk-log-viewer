@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfvspu3407n0m"]
+
+[ext_resource type="Script" uid="uid://cxdcm5y7vkhwj" path="res://directory_picker.gd" id="1_7qsqj"]
+[ext_resource type="Script" uid="uid://c6u73srkfc2nm" path="res://main_window.gd" id="1_e7h7s"]
+[ext_resource type="Theme" uid="uid://70w16e6pag8v" path="res://Dark.tres" id="1_p4i4y"]
+[ext_resource type="Script" uid="uid://dy4n5vklbtsc3" path="res://toggle_dp.gd" id="1_p4mt5"]
+[ext_resource type="Script" uid="uid://blxct11hjh724" path="res://view_logs_button.gd" id="3_3ygwi"]
+[ext_resource type="PackedScene" uid="uid://bgrsbih7no468" path="res://log_file_list.tscn" id="4_l4su8"]
+[ext_resource type="Script" uid="uid://bn476lkoin1uo" path="res://view_log_button.gd" id="5_l4su8"]
+
+[node name="MainWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_p4i4y")
+script = ExtResource("1_e7h7s")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09019608, 0.09019608, 0.09019608, 1)
+
+[node name="DirectorySelection" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DirectoryPicker" type="FileDialog" parent="DirectorySelection"]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "Open a Directory"
+initial_position = 2
+file_mode = 2
+access = 2
+use_native_dialog = true
+script = ExtResource("1_7qsqj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DirectorySelection"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DirectorySelection/VBoxContainer"]
+layout_mode = 2
+
+[node name="ToggleDP" type="Button" parent="DirectorySelection/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Locate directory"
+script = ExtResource("1_p4mt5")
+
+[node name="DirectoryName" type="Label" parent="DirectorySelection/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ViewLogsButton" type="Button" parent="DirectorySelection/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "View logs"
+script = ExtResource("3_3ygwi")
+
+[node name="LogFileListContainer" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LogFileListContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LogFileList" parent="LogFileListContainer/VBoxContainer" instance=ExtResource("4_l4su8")]
+unique_name_in_owner = true
+layout_mode = 2
+auto_height = false
+
+[node name="ViewLogButton" type="Button" parent="LogFileListContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+disabled = true
+text = "View log"
+script = ExtResource("5_l4su8")
