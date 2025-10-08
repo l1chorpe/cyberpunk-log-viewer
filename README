@@ -8,6 +8,10 @@ Cyberpunk Log Viewer (CLV) is a small utility for Cyberpunk: 2077. If your game 
 
 Just run CLV, locate your game folder, and it'll find all the logs for you. Then you can select a file and click on the button at the bottom to open it, or simply double click on the name, and a new window will open with the file contents.
 
+### Installation
+
+Head to the [releases](https://github.com/l1chorpe/cyberpunk-log-viewer/releases) section, download the version of CLV you want (latest recommended) and unzip it wherever you want. Then just double-click the EXE file. Make sure to **keep the EXE and PCK files in the same folder**, or CLV won't work.
+
 ### Current limitations & roadmap (in no particular order)
 
 - The folders being checked are limited (list further down) for now. As I have no clear idea how mods are installed (especially those adding textures and whatnot), I avoided checking everything in the game folder to avoid potentially spending too much time traversing folders. **However**, I have planned to add a toggle at a later date, should anyone need or want to check every location.
