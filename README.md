@@ -28,7 +28,7 @@ Head to the [releases](https://github.com/l1chorpe/cyberpunk-log-viewer/releases
 
 ### List of folders checked by CLV
 
-/bin/x64/plugins/cyber_engine_tweaks
-/r6/logs
-/red4ext/logs
-/red4ext/plugins
+/bin/x64/plugins/cyber_engine_tweaks  
+/r6/logs  
+/red4ext/logs  
+/red4ext/plugins  
