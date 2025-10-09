@@ -61,9 +61,10 @@ func get_selected_item() -> LogFile:
     # This is fine because only one element can be selected
     return _log_files[get_selected_items()[0]]
 
-func _item_clicked(_index: int, at_position: Vector2, mouse_button_index: int) -> void:
+func _item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
     if mouse_button_index == MOUSE_BUTTON_RIGHT:
-        # Make the context menu appear
+        # Make the context menu appear and give it the targeted log file
+        $RightClickMenu.set_target_log_file(_log_files[index])
         $RightClickMenu.set_position(at_position)
         $RightClickMenu.position_changed.emit()
         $RightClickMenu.show()
