@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgrsbih7no468"]
+[gd_scene load_steps=3 format=3 uid="uid://bgrsbih7no468"]
 
 [ext_resource type="Script" uid="uid://bspsn5pu1gs1l" path="res://log_file_list.gd" id="1_atb8g"]
+[ext_resource type="PackedScene" uid="uid://bbcd3icyndmcj" path="res://right_click_menu.tscn" id="2_2s1yg"]
 
 [node name="LogFileList" type="ItemList"]
 offset_right = 40.0
@@ -9,3 +10,7 @@ theme_override_font_sizes/font_size = 24
 auto_width = true
 auto_height = true
 script = ExtResource("1_atb8g")
+
+[node name="RightClickMenu" parent="." instance=ExtResource("2_2s1yg")]
+visible = false
+layout_mode = 0
