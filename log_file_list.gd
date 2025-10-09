@@ -48,7 +48,9 @@ func _find_log_files_in(directory: String) -> void:
 
 func update_displayed() -> void:
     for log_file in _log_files:
-        add_item(log_file.filename)
+        # Add the item and show the full path in the tooltip
+        var item_index := add_item(log_file.filename)
+        set_item_tooltip(item_index, log_file.full_path)
 
 func get_selected_item() -> LogFile:
     # This is fine because only one element can be selected
