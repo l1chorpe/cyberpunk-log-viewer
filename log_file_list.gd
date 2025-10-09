@@ -65,7 +65,7 @@ func _item_clicked(index: int, at_position: Vector2, mouse_button_index: int) ->
     if mouse_button_index == MOUSE_BUTTON_RIGHT:
         # Make the context menu appear and give it the targeted log file
         $RightClickMenu.set_target_log_file(_log_files[index])
-        $RightClickMenu.set_position(at_position)
+        $RightClickMenu.set_optimal_position(at_position)
         $RightClickMenu.position_changed.emit()
         $RightClickMenu.show()
     else:

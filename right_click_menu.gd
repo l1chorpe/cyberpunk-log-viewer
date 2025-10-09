@@ -28,3 +28,12 @@ func _copy_file_path_button_pressed() -> void:
 
 func set_target_log_file(log_file: LogFile) -> void:
     _target_log_file = log_file
+
+func set_optimal_position(pos: Vector2) -> void:
+    # Replace the context menu according to the boundaries to avoid clipping at the edges
+    var log_file_list: ItemList = get_parent()
+    if pos.x + size.x > log_file_list.size.x:
+        pos.x -= size.x
+    if pos.y + size.y > log_file_list.size.y:
+        pos.y -= size.y
+    set_position(pos)
