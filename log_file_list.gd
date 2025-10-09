@@ -63,11 +63,14 @@ func get_selected_item() -> LogFile:
 
 func _item_clicked(_index: int, at_position: Vector2, mouse_button_index: int) -> void:
     if mouse_button_index == MOUSE_BUTTON_RIGHT:
+        # Make the context menu appear
         $RightClickMenu.set_position(at_position)
         $RightClickMenu.position_changed.emit()
         $RightClickMenu.show()
     else:
+        # Make the context menu disappear when clicking with any button except the right
         $RightClickMenu.hide()
 
 func _focus_exited() -> void:
+    # Hide the context menu on focus loss
     $RightClickMenu.hide()
