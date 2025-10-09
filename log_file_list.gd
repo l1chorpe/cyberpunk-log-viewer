@@ -1,5 +1,8 @@
 extends ItemList
 
+@onready
+var right_click_menu := preload("uid://bbcd3icyndmcj")
+
 # Stores all log files
 var _log_files: Array[LogFile] = []
 
@@ -7,6 +10,8 @@ func _ready() -> void:
     item_selected.connect(_item_selected)
     resized.connect(resize)
     item_activated.connect(func(_index): %ViewLogButton.pressed.emit())
+    item_clicked.connect(_item_clicked)
+    focus_exited.connect(_focus_exited)
 
 func _item_selected(_index: int) -> void:
     %ViewLogButton.disabled = false
@@ -55,3 +60,14 @@ func update_displayed() -> void:
 func get_selected_item() -> LogFile:
     # This is fine because only one element can be selected
     return _log_files[get_selected_items()[0]]
+
+func _item_clicked(_index: int, at_position: Vector2, mouse_button_index: int) -> void:
+    if mouse_button_index == MOUSE_BUTTON_RIGHT:
+        $RightClickMenu.set_position(at_position)
+        $RightClickMenu.position_changed.emit()
+        $RightClickMenu.show()
+    else:
+        $RightClickMenu.hide()
+
+func _focus_exited() -> void:
+    $RightClickMenu.hide()
