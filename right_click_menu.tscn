@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bbcd3icyndmcj"]
+
+[node name="RightClickMenu" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CopyFolderPathButton" type="Button" parent="."]
+layout_mode = 2
+text = "Copy folder path"
+
+[node name="CopyFilePathButton" type="Button" parent="."]
+layout_mode = 2
+text = "Copy file path"
