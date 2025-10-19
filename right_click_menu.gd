@@ -1,22 +1,16 @@
 extends Control
 
-signal position_changed()
-
 var _target_log_file: LogFile
 
 
 func _ready() -> void:
-    position_changed.connect(_position_changed)
-
     $VBoxContainer/CopyFolderPathButton.pressed.connect(_copy_folder_path_button_pressed)
     $VBoxContainer/CopyFilePathButton.pressed.connect(_copy_file_path_button_pressed)
     $VBoxContainer/OpenWithButton.pressed.connect(_open_with_button_pressed)
     $VBoxContainer/OpenWithSelector.file_selected.connect(_file_selected)
 
-func _position_changed():
-    # Somehow, without this, the root element doesn't scale up with the buttons
-    var new_size: Vector2i = $VBoxContainer/CopyFolderPathButton.size
-    set_size(Vector2(new_size.x * 1.05, new_size.y * 2.4))
+    # Fit the background size to the size of the container
+    $Background.custom_minimum_size = size
 
 func _copy_folder_path_button_pressed() -> void:
     # Copy to clipboard and hide
