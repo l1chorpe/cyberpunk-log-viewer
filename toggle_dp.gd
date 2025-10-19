@@ -6,4 +6,4 @@ func _ready() -> void:
 
 func _button_pressed() -> void:
     # Show directory picker (FileDialog)
-    %DirectoryPicker.visible = true
+    %DirectoryPicker.show()

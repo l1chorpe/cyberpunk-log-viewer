@@ -10,5 +10,5 @@ func _dir_selected(path: String) -> void:
     # Update button text
     %ToggleDP.text = "Change directory"
     # Show "view logs" and "toggle full search" buttons
-    %ViewLogsButton.visible = true
+    %ViewLogsButton.show()
     %ToggleFullSearch.show()
