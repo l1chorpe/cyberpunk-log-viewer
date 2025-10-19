@@ -8,13 +8,13 @@ Cyberpunk Log Viewer (CLV) is a small utility for Cyberpunk: 2077. If your game 
 
 Just run CLV, locate your game folder, and it'll find all the logs for you. Then you can select a file and click on the button at the bottom to open it, or simply double click on the name, and a new window will open with the file contents.
 
+You can also right-click on any file to copy the full path to the directory or file to your clipboard, or to open the file with a program of your choice.
+
 ### Installation
 
 Head to the [releases](https://github.com/l1chorpe/cyberpunk-log-viewer/releases) section, download the version of CLV you want (latest recommended) and unzip it wherever you want. Then just double-click the EXE file. Make sure to **keep the EXE and PCK files in the same folder**, or CLV won't work.
 
 ### Current limitations & roadmap (in no particular order)
-
-- The folders being checked are limited (list further down) for now. As I have no clear idea how mods are installed (especially those adding textures and whatnot), I avoided checking everything in the game folder to avoid potentially spending too much time traversing folders. **However**, I have planned to add a toggle at a later date, should anyone need or want to check every location.
 
 - The files listed are not filtered/ordered. I also plan on adding a few filters and sorting types, including differentiating between "core" mods like CET and RED4ext, and "regular" mods.
 
@@ -22,11 +22,19 @@ Head to the [releases](https://github.com/l1chorpe/cyberpunk-log-viewer/releases
 
 - **There is no syntax highlighting when viewing logs.** And it's extremely likely to stay this way, since everyone has their own way of writing logs. However, I have not researched at all about the subject so, if I find a way to make it happen *without too much hassle*, it will happen.
 
-- There is no way to open folders containing the files, or even see paths, or to open the files in an external editor. However, that is something I'd like to implement quite soon, as I can easily see how unpractical that can be.
+- There is no way to open folders containing the files.
 
 - This is a very early release so things might break if you ask a bit too much out of it. No worries though, this will get fixed. However, due to the quantity of edge cases, this will take a while to complete, especially since new features always add new edge cases.
 
-### List of folders checked by CLV
+- There is no feedback when copying paths.
+
+### Known bugs
+
+- When opening the context menu (right click) on a log file in the list, the background is bigger than it should.
+
+- Trying to open the context menu after having selected a log file in the list will not work. A workaround is to right-click again, or deselect the element before right-clicking.
+
+### List of folders checked by CLV (only if full search is disabled)
 
 /bin/x64/plugins/cyber_engine_tweaks  
 /r6/logs  
