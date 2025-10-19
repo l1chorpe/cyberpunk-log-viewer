@@ -52,4 +52,5 @@ text = "Open with..."
 title = "Open a File"
 file_mode = 0
 access = 2
+filters = PackedStringArray("*.exe;Executables;application/vnd.microsoft.portable-executable")
 use_native_dialog = true
