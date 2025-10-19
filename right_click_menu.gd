@@ -44,5 +44,6 @@ func _open_with_button_pressed() -> void:
     $VBoxContainer/OpenWithSelector.show()
 
 func _file_selected(path: String) -> void:
+    # Open the log file in the specified program
     OS.create_process(path, [_target_log_file.full_path])
     hide()
