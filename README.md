@@ -32,7 +32,7 @@ Head to the [releases](https://github.com/l1chorpe/cyberpunk-log-viewer/releases
 
 - When opening the context menu (right click) on a log file in the list, the background is bigger than it should.
 
-- Trying to open the context menu after having selected a log file in the list will not work. A workaround is to right-click again, or deselect the element before right-clicking.
+- When opening the context menu after having selected a log file in the list, the buttons will not work. A workaround is to right-click again, or deselect the element before right-clicking.
 
 ### List of folders checked by CLV (only if full search is disabled)
 
