@@ -21,9 +21,13 @@ func resize() -> void:
     custom_minimum_size.y = .8 * get_viewport_rect().size.y
     
 
-func find_all_log_files(cyberpunk_directory: String) -> void:
-    # Limit search to relevant dirs
-    # Can be unlocked to full game root dir if necessary, as Δ(t) = ~6ms
+func find_all_log_files(cyberpunk_directory: String, full_search: bool) -> void:
+    # If toggled, search through the whole game directory
+    if full_search:
+        _find_log_files_in(cyberpunk_directory)
+        return
+
+    # Otherwise only the specified
     var TARGET_DIRS: PackedStringArray = [
         cyberpunk_directory + "/bin/x64/plugins/cyber_engine_tweaks",
         cyberpunk_directory + "/r6/logs",

@@ -62,6 +62,13 @@ script = ExtResource("1_p4mt5")
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="ToggleFullSearch" type="CheckButton" parent="DirectorySelection/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Full search"
+
 [node name="ViewLogsButton" type="Button" parent="DirectorySelection/VBoxContainer"]
 unique_name_in_owner = true
 visible = false
