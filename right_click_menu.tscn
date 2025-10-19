@@ -42,3 +42,14 @@ text = "Copy folder path"
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Copy file path"
+
+[node name="OpenWithButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Open with..."
+
+[node name="OpenWithSelector" type="FileDialog" parent="VBoxContainer"]
+title = "Open a File"
+file_mode = 0
+access = 2
+use_native_dialog = true

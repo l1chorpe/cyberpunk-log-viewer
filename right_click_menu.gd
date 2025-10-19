@@ -10,6 +10,8 @@ func _ready() -> void:
 
     $VBoxContainer/CopyFolderPathButton.pressed.connect(_copy_folder_path_button_pressed)
     $VBoxContainer/CopyFilePathButton.pressed.connect(_copy_file_path_button_pressed)
+    $VBoxContainer/OpenWithButton.pressed.connect(_open_with_button_pressed)
+    $VBoxContainer/OpenWithSelector.file_selected.connect(_file_selected)
 
 func _position_changed():
     # Somehow, without this, the root element doesn't scale up with the buttons
@@ -37,3 +39,10 @@ func set_optimal_position(pos: Vector2) -> void:
     if pos.y + size.y > log_file_list.size.y:
         pos.y -= size.y
     set_position(pos)
+
+func _open_with_button_pressed() -> void:
+    $VBoxContainer/OpenWithSelector.show()
+
+func _file_selected(path: String) -> void:
+    OS.create_process(path, [_target_log_file.full_path])
+    hide()

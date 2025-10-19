@@ -7,11 +7,11 @@ var right_click_menu := preload("uid://bbcd3icyndmcj")
 var _log_files: Array[LogFile] = []
 
 func _ready() -> void:
+    focus_exited.connect(_focus_exited)
     item_selected.connect(_item_selected)
     resized.connect(resize)
     item_activated.connect(func(_index): %ViewLogButton.pressed.emit())
     item_clicked.connect(_item_clicked)
-    focus_exited.connect(_focus_exited)
 
 func _item_selected(_index: int) -> void:
     %ViewLogButton.disabled = false
@@ -73,5 +73,4 @@ func _item_clicked(index: int, at_position: Vector2, mouse_button_index: int) ->
         $RightClickMenu.hide()
 
 func _focus_exited() -> void:
-    # Hide the context menu on focus loss
     $RightClickMenu.hide()
