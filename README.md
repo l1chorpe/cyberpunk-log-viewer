@@ -14,8 +14,6 @@ You can also right-click on any file to copy the full path to the directory or f
 
 Head to the [releases](https://github.com/l1chorpe/cyberpunk-log-viewer/releases) section, download the version of CLV you want (latest recommended) and unzip it wherever you want. Then just double-click the EXE file.<sup>1</sup>
 
-<sup>1</sup>If you download CLV 1.0.1, make sure to keep the EXE and PCK files in the same folder, or CLV won't work.
-
 ### Current limitations & roadmap (in no particular order)
 
 - The files listed are not filtered/ordered. I also plan on adding a few filters and sorting types, including differentiating between "core" mods like CET and RED4ext, and "regular" mods.
@@ -40,3 +38,7 @@ Head to the [releases](https://github.com/l1chorpe/cyberpunk-log-viewer/releases
 /r6/logs  
 /red4ext/logs  
 /red4ext/plugins  
+
+### Appendix
+
+<sup>1</sup>If you download CLV 1.0.1, make sure to keep the EXE and PCK files in the same folder, or CLV won't work.
