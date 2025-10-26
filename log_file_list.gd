@@ -7,7 +7,6 @@ var right_click_menu := preload("uid://bbcd3icyndmcj")
 var _log_files: Array[LogFile] = []
 
 func _ready() -> void:
-    focus_exited.connect(_focus_exited)
     item_selected.connect(_item_selected)
     resized.connect(resize)
     item_activated.connect(func(_index): %ViewLogButton.pressed.emit())
@@ -67,13 +66,11 @@ func get_selected_item() -> LogFile:
 
 func _item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
     if mouse_button_index == MOUSE_BUTTON_RIGHT:
-        # Make the context menu appear and give it the targeted log file
+        # Make the context menu appear and give it focus and the targeted log file
         $RightClickMenu.set_target_log_file(_log_files[index])
         $RightClickMenu.set_optimal_position(at_position)
         $RightClickMenu.show()
+        $RightClickMenu.grab_focus()
     else:
-        # Make the context menu disappear when clicking with any button except the right
-        $RightClickMenu.hide()
-
-func _focus_exited() -> void:
-    $RightClickMenu.hide()
+        # Grab focus again
+        grab_focus()

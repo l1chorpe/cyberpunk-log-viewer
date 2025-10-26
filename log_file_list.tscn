@@ -14,3 +14,4 @@ script = ExtResource("1_atb8g")
 [node name="RightClickMenu" parent="." instance=ExtResource("2_2s1yg")]
 visible = false
 layout_mode = 0
+focus_mode = 1
