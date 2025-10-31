@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfvspu3407n0m"]
+[gd_scene load_steps=9 format=3 uid="uid://cfvspu3407n0m"]
 
 [ext_resource type="Script" uid="uid://cxdcm5y7vkhwj" path="res://directory_picker.gd" id="1_7qsqj"]
 [ext_resource type="Script" uid="uid://c6u73srkfc2nm" path="res://main_window.gd" id="1_e7h7s"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://blxct11hjh724" path="res://view_logs_button.gd" id="3_3ygwi"]
 [ext_resource type="PackedScene" uid="uid://bgrsbih7no468" path="res://log_file_list.tscn" id="4_l4su8"]
 [ext_resource type="Script" uid="uid://bn476lkoin1uo" path="res://view_log_button.gd" id="5_l4su8"]
+[ext_resource type="Script" uid="uid://dimks6a5451b3" path="res://change_game_loc_button.gd" id="8_4y1g4"]
 
 [node name="MainWindow" type="Control"]
 layout_mode = 3
@@ -104,3 +105,9 @@ size_flags_horizontal = 4
 disabled = true
 text = "View log"
 script = ExtResource("5_l4su8")
+
+[node name="ChangeGameLocButton" type="Button" parent="LogFileListContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Change game location"
+script = ExtResource("8_4y1g4")
