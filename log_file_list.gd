@@ -21,6 +21,9 @@ func resize() -> void:
     
 
 func find_all_log_files(cyberpunk_directory: String, full_search: bool) -> void:
+    # Clear for when it is reloaded
+    _log_files.clear()
+    
     # If toggled, search through the whole game directory
     if full_search:
         _find_log_files_in(cyberpunk_directory)
@@ -55,6 +58,9 @@ func _find_log_files_in(directory: String) -> void:
         filename = dir.get_next()
 
 func update_displayed() -> void:
+    # Clear list for when it is reloaded
+    clear()
+
     for log_file in _log_files:
         # Add the item and show the full path in the tooltip
         var item_index := add_item(log_file.filename)
