@@ -22,9 +22,9 @@ Head to the [releases](https://github.com/l1chorpe/cyberpunk-log-viewer/releases
 
 - **There is no syntax highlighting when viewing logs.** And it's extremely likely to stay this way, since everyone has their own way of writing logs. However, I have not researched at all about the subject so, if I find a way to make it happen *without too much hassle*, it will happen.
 
-- There is no way to open folders containing the files.
+- There is no (direct) way to open folders containing the files.
 
-- This is a very early release so things might break if you ask a bit too much out of it. No worries though, this will get fixed. However, due to the quantity of edge cases, this will take a while to complete, especially since new features always add new edge cases.
+- Some edge cases are not being taken care of explicitly, like if you give it the wrong folder, but it won't break anything or crash the app.
 
 - There is no feedback when copying paths.
 
