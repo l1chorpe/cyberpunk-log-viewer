@@ -12,8 +12,8 @@ func _ready() -> void:
     $VBoxContainer/OpenWithSelector.file_selected.connect(_file_selected)
     $VBoxContainer/OpenWithSelector.canceled.connect(_open_with_canceled)
 
-    # Fit the background size to the size of the container
-    $Background.custom_minimum_size = size
+    # Adjusts the size of the menu's root according to the buttons' size
+    size = $VBoxContainer.size
 
 func _copy_folder_path_button_pressed() -> void:
     # Copy to clipboard and hide

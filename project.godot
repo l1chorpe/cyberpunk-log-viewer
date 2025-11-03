@@ -11,11 +11,12 @@ config_version=5
 [application]
 
 config/name="Cyberpunk Log Viewer"
-config/version="1.2.0"
+config/version="1.2.1"
 run/main_scene="uid://cfvspu3407n0m"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0.09019608, 0.09019608, 0.09019608, 1)
 boot_splash/show_image=false
+config/icon="uid://co31yhk6xwofq"
 
 [display]
 
